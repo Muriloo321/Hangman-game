@@ -71,7 +71,7 @@ public class GameStructure {
     int counter = 0;
         for(int i = 0; i < sortedWord.length; i++){
             if(sortedWord[i] == Character.toUpperCase(l)){
-                hiddenWord[i] = l;
+                hiddenWord[i] = Character.toUpperCase(l);
                 counter++;
             }
         }
