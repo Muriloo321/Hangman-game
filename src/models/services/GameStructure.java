@@ -21,14 +21,22 @@ public class GameStructure {
     }
 
     public void initializeGame(){
-        this.sortedWord = WordsManager.chooseWord().toCharArray();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Bem-vindo ao jogo da forca! Tente adivinhar a palavra!");
+        System.out.println("Primeiramente, selecione um tema:");
+        System.out.println("1- Jogos");
+        System.out.println("2- Filmes");
+        System.out.println("3- Nomes");
+        System.out.println("4- Animais");
+        System.out.println("5- Objetos");
+        int themeChoice = sc.nextInt();
+        this.sortedWord = WordsManager.chooseWord(themeChoice).toCharArray();
         this.hiddenWord = new char[sortedWord.length];
 
         for(int i = 0; i < hiddenWord.length; i++){
             hiddenWord[i] = '-';
         }
 
-        System.out.println("Bem-vindo ao jogo da forca! Tente adivinhar a palavra!");
         System.out.println("Você possui "+getLives()+" vidas.");
         System.out.println("Vamos começar.");
         System.out.println();
@@ -90,8 +98,9 @@ public class GameStructure {
             }
             return input.charAt(0);
         } catch (IllegalArgumentException e) {
+            System.out.println();
             System.out.println("Erro: " + e.getMessage());
-            System.exit(0);
+            System.out.println();
             return ' ';
         }
     }
