@@ -12,7 +12,7 @@ public class WordsManager {
     .txt, para escolha do tema, além de lançar uma palavra aleatória para o programa principal.*/
 
     //O vetor "ARQUIVOS" está totalmente em maiúsculo por se tratar de constantes
-    private static final String[] ARQUIVOS = {"jogos.txt", "filmes.txt", "nomes.txt", "animais.txt", "objetos.txt"};
+    private static final String[] ARQUIVOS = {"temas/jogos.txt", "temas/filmes.txt", "temas/nomes.txt", "temas/animais.txt", "temas/objetos.txt"};
 
     private static List<String> generateWords(int choice) {
         List<String> possibleWords = new ArrayList<>();
